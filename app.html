@@ -8,19 +8,20 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#06080f;
-  --surface:#0d1117;
-  --surface2:#141922;
-  --border:rgba(255,255,255,0.07);
-  --border2:rgba(255,255,255,0.12);
-  --text:#e8eaf0;
-  --muted:#6b7280;
-  --accent:#00d4ff;
-  --accent2:#7c3aed;
-  --accent3:#10b981;
-  --warn:#f59e0b;
-  --danger:#ef4444;
-  --gold:#e6b84a;
+  --bg:#0c0a08;
+  --surface:#141210;
+  --surface2:#1e1b18;
+  --border:rgba(212,168,67,0.1);
+  --border2:rgba(212,168,67,0.2);
+  --text:#f0ece4;
+  --muted:#7a7065;
+  --accent:#d4a843;
+  --accent2:#a8752a;
+  --accent3:#2d9c6e;
+  --warn:#e8923a;
+  --danger:#c94040;
+  --gold:#d4a843;
+  --gold-bright:#e8c86a;
 }
 html{scroll-behavior:smooth}
 body{
@@ -56,7 +57,7 @@ body{
   font-family:'Syne',sans-serif;
   font-weight:800;font-size:22px;
   letter-spacing:-0.03em;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  background:linear-gradient(135deg,var(--gold-bright),var(--accent));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
 }
@@ -73,7 +74,7 @@ body{
   margin:1px 0;
 }
 .nav-item:hover{color:var(--text);background:rgba(255,255,255,0.04)}
-.nav-item.active{color:var(--accent);border-left-color:var(--accent);background:rgba(0,212,255,0.06)}
+.nav-item.active{color:var(--accent);border-left-color:var(--accent);background:rgba(212,168,67,0.07)}
 .nav-item svg{width:15px;height:15px;opacity:0.7}
 .nav-item.active svg{opacity:1}
 
@@ -88,7 +89,7 @@ body{
 }
 .score-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .score-bar-wrap{background:rgba(255,255,255,0.06);border-radius:4px;height:6px;overflow:hidden;margin-bottom:6px}
-.score-bar{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:4px;transition:width 1s ease;width:0%}
+.score-bar{height:100%;background:linear-gradient(90deg,var(--accent2),var(--gold-bright));border-radius:4px;transition:width 1s ease;width:0%}
 .score-num{font-family:'Syne',sans-serif;font-weight:700;font-size:20px;color:var(--text)}
 .score-num span{font-size:12px;font-weight:400;color:var(--muted)}
 
@@ -109,10 +110,10 @@ body{
 .badge{
   font-family:'JetBrains Mono',monospace;font-size:10px;
   padding:4px 10px;border-radius:20px;
-  background:rgba(0,212,255,0.1);color:var(--accent);
-  border:1px solid rgba(0,212,255,0.2);
+  background:rgba(212,168,67,0.1);color:var(--accent);
+  border:1px solid rgba(212,168,67,0.22);
 }
-.badge.pro{background:rgba(124,58,237,0.15);color:#a78bfa;border-color:rgba(124,58,237,0.3)}
+.badge.pro{background:rgba(212,168,67,0.15);color:var(--gold-bright);border-color:rgba(212,168,67,0.35)}
 
 /* ─── CONTENT AREA ─── */
 .content{flex:1;overflow-y:auto;padding:32px}
@@ -179,14 +180,14 @@ body{
   cursor:pointer;border:none;transition:all 0.2s;
   letter-spacing:0.02em;
 }
-.btn-primary{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff}
+.btn-primary{background:linear-gradient(135deg,var(--accent2),var(--gold-bright));color:#0c0a08}
 .btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
 .btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text)}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-.btn-ghost{background:rgba(0,212,255,0.08);color:var(--accent);border:1px solid rgba(0,212,255,0.2)}
-.btn-ghost:hover{background:rgba(0,212,255,0.15)}
-.btn-green{background:rgba(16,185,129,0.15);color:var(--accent3);border:1px solid rgba(16,185,129,0.3)}
-.btn-green:hover{background:rgba(16,185,129,0.25)}
+.btn-ghost{background:rgba(212,168,67,0.08);color:var(--accent);border:1px solid rgba(212,168,67,0.25)}
+.btn-ghost:hover{background:rgba(212,168,67,0.15)}
+.btn-green{background:rgba(45,156,110,0.12);color:var(--accent3);border:1px solid rgba(45,156,110,0.28)}
+.btn-green:hover{background:rgba(45,156,110,0.22)}
 .btn:disabled{opacity:0.4;cursor:not-allowed;transform:none!important}
 .btn-full{width:100%;justify-content:center}
 
@@ -209,12 +210,12 @@ body{
   color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;
   margin-bottom:12px;
 }
-.ai-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 1.5s infinite}
+.ai-dot{width:6px;height:6px;background:var(--gold-bright);border-radius:50%;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
 
 /* ─── LOADING ─── */
 .loading-dots{display:inline-flex;gap:4px;align-items:center}
-.loading-dots span{width:5px;height:5px;background:var(--accent);border-radius:50%;animation:bounce 1.2s infinite}
+.loading-dots span{width:5px;height:5px;background:var(--gold-bright);border-radius:50%;animation:bounce 1.2s infinite}
 .loading-dots span:nth-child(2){animation-delay:0.2s}
 .loading-dots span:nth-child(3){animation-delay:0.4s}
 @keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
@@ -224,8 +225,8 @@ body{
 .tag{
   font-family:'JetBrains Mono',monospace;font-size:11px;
   padding:4px 10px;border-radius:4px;
-  background:rgba(124,58,237,0.12);color:#a78bfa;
-  border:1px solid rgba(124,58,237,0.25);
+  background:rgba(212,168,67,0.1);color:var(--gold-bright);
+  border:1px solid rgba(212,168,67,0.22);
 }
 .tag.green{background:rgba(16,185,129,0.1);color:var(--accent3);border-color:rgba(16,185,129,0.25)}
 .tag.red{background:rgba(239,68,68,0.1);color:#f87171;border-color:rgba(239,68,68,0.25)}
@@ -276,14 +277,14 @@ body{
   font-family:'Syne',sans-serif;font-size:11px;font-weight:700;
   min-width:28px;
 }
-.chat-avatar.ai{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff}
+.chat-avatar.ai{background:linear-gradient(135deg,var(--accent2),var(--gold-bright));color:#0c0a08}
 .chat-avatar.user{background:var(--surface);border:1px solid var(--border2);color:var(--muted)}
 .chat-bubble{
   background:var(--surface);border:1px solid var(--border);
   border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.65;
   max-width:80%;
 }
-.chat-msg.user .chat-bubble{background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.3);color:#c4b5fd}
+.chat-msg.user .chat-bubble{background:rgba(212,168,67,0.1);border-color:rgba(212,168,67,0.25);color:var(--gold-bright)}
 .chat-input-row{display:flex;gap:8px}
 
 /* ─── SALARY TABLE ─── */
@@ -295,7 +296,7 @@ body{
 .sal-title{font-family:'Syne',sans-serif;font-weight:500}
 .sal-range{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent3)}
 .sal-bar-bg{width:120px;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden}
-.sal-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:2px}
+.sal-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent2),var(--gold-bright));border-radius:2px}
 
 /* ─── ONBOARDING ─── */
 #onboarding{
@@ -311,7 +312,7 @@ body{
 }
 .onboard-logo{
   font-family:'Syne',sans-serif;font-weight:800;font-size:28px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  background:linear-gradient(135deg,var(--gold-bright),var(--accent));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;margin-bottom:6px;
 }
@@ -323,7 +324,7 @@ body{
 }
 .step-dot{width:6px;height:6px;border-radius:50%;background:var(--border2);transition:background 0.3s}
 .step-dot.done{background:var(--accent2)}
-.step-dot.current{background:var(--accent)}
+.step-dot.current{background:var(--gold-bright)}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:768px){
@@ -337,8 +338,73 @@ body{
 
 /* glow accent */
 .glow{
-  box-shadow:0 0 20px rgba(0,212,255,0.1),0 0 40px rgba(0,212,255,0.05);
+  box-shadow:0 0 20px rgba(212,168,67,0.1),0 0 40px rgba(212,168,67,0.05);
 }
+
+/* ─── COPY BUTTON ─── */
+.copy-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;
+  color:var(--muted);background:var(--surface2);
+  border:1px solid var(--border2);border-radius:4px;
+  padding:5px 12px;cursor:pointer;margin-top:12px;
+  transition:all 0.2s;
+}
+.copy-btn:hover{color:var(--accent);border-color:rgba(212,168,67,0.35)}
+.copy-btn.copied{color:var(--accent3);border-color:rgba(45,156,110,0.35)}
+
+/* ─── PATH CARDS ─── */
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.path-card{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:10px;padding:18px;cursor:pointer;
+  transition:all 0.2s;text-align:center;
+}
+.path-card:hover,.path-card.selected{border-color:var(--accent);background:rgba(212,168,67,0.06)}
+.path-card.selected{box-shadow:0 0 0 1px var(--accent)}
+.path-icon{font-size:26px;margin-bottom:8px}
+.path-card h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:4px}
+.path-card p{font-size:11px;color:var(--muted);line-height:1.5}
+
+/* ─── ATS KEYWORD TAGS ─── */
+.kw-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.kw-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:3px}
+.kw-found{background:rgba(45,156,110,0.12);color:var(--accent3);border:1px solid rgba(45,156,110,0.25)}
+.kw-missing{background:rgba(201,64,64,0.1);color:#e87070;border:1px solid rgba(201,64,64,0.25)}
+.kw-partial{background:rgba(232,146,58,0.1);color:var(--warn);border:1px solid rgba(232,146,58,0.25)}
+
+/* ─── PRO BADGE ─── */
+.pro-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.15em;
+  background:rgba(212,168,67,0.12);
+  border:1px solid rgba(212,168,67,0.3);color:var(--gold-bright);
+  padding:3px 10px;border-radius:20px;text-transform:uppercase;
+}
+
+/* ─── JOB TRACKER ─── */
+.tracker-table{width:100%;border-collapse:collapse;font-size:13px}
+.tracker-table th{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);padding:8px 12px;text-align:left;border-bottom:1px solid var(--border2)}
+.tracker-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.tracker-table tr:last-child td{border:none}
+.tracker-table tr:hover td{background:rgba(212,168,67,0.03)}
+.status-pill{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;padding:3px 8px;border-radius:20px;text-transform:uppercase;white-space:nowrap}
+.status-pill.applied{background:rgba(212,168,67,0.1);color:var(--gold-bright);border:1px solid rgba(212,168,67,0.2)}
+.status-pill.interview{background:rgba(45,156,110,0.12);color:var(--accent3);border:1px solid rgba(45,156,110,0.25)}
+.status-pill.offer{background:rgba(45,156,110,0.2);color:#4ade80;border:1px solid rgba(74,222,128,0.3)}
+.status-pill.rejected{background:rgba(201,64,64,0.1);color:#e87070;border:1px solid rgba(201,64,64,0.2)}
+.status-pill.followup{background:rgba(232,146,58,0.12);color:var(--warn);border:1px solid rgba(232,146,58,0.25)}
+.add-job-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;align-items:end;margin-bottom:16px}
+
+
+/* ── DESTINATION SELECTOR ── */
+.dest-bar{padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:50}
+.dest-bar-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.18em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+.dest-pills{display:flex;flex-wrap:wrap;gap:5px}
+.dest-pill{font-family:'JetBrains Mono',monospace;font-size:9px;padding:4px 10px;border-radius:20px;border:1px solid var(--border2);background:none;cursor:pointer;color:var(--muted);transition:all 0.15s;letter-spacing:0.05em}
+.dest-pill:hover{color:var(--accent);border-color:var(--accent)}
+.dest-pill.active{background:var(--accent);color:#000;border-color:var(--accent);font-weight:600}
+.dest-divider{width:1px;height:16px;background:var(--border2);margin:0 4px;display:inline-block;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -460,6 +526,28 @@ body{
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         AI Coach
       </div>
+      <div class="nav-section">Advanced</div>
+      <div class="nav-item" onclick="showPage('ats',this)">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        ATS Scanner
+      </div>
+      <div class="nav-item" onclick="showPage('coverletter',this)">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Cover Letter
+      </div>
+      <div class="nav-item" onclick="showPage('pathguide',this)">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Career Path Guide
+      </div>
+      <div class="nav-section">Organize</div>
+      <div class="nav-item" onclick="showPage('tracker',this)">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+        Job Tracker
+      </div>
+      <div class="nav-item" onclick="showPage('emails',this)">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+        Email Templates
+      </div>
     </div>
     <div class="sidebar-footer">
       <div class="score-widget">
@@ -476,14 +564,34 @@ body{
       <div class="topbar-title">Good morning, <span id="topName">—</span></div>
       <div class="topbar-right">
         <span class="badge" id="topRole">Loading...</span>
-        <span class="badge pro">PRO</span>
+        <a href="https://buy.stripe.com/eVq28q5Rlfsd04d9yi67S00" style="font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:#0c0a08;background:linear-gradient(135deg,#d4a843,#e8c86a);padding:7px 16px;text-decoration:none;letter-spacing:0.03em;transition:opacity 0.2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Unlock Your Future →</a>
       </div>
     </div>
 
     <div class="content">
 
       <!-- ── DASHBOARD ── -->
-      <div class="page active" id="page-dashboard">
+      
+  <!-- DESTINATION SELECTOR -->
+  <div class="dest-bar">
+    <div class="dest-bar-label">Open in →</div>
+    <div class="dest-pills">
+      <button class="dest-pill active" onclick="setDest('https://chatgpt.com/','ChatGPT',this)">ChatGPT</button>
+      <button class="dest-pill" onclick="setDest('https://claude.ai/new','Claude',this)">Claude</button>
+      <button class="dest-pill" onclick="setDest('https://gemini.google.com/','Gemini',this)">Gemini</button>
+      <button class="dest-pill" onclick="setDest('https://grok.com/','Grok',this)">Grok</button>
+      <button class="dest-pill" onclick="setDest('https://copilot.microsoft.com/','Copilot',this)">Copilot</button>
+      <button class="dest-pill" onclick="setDest('https://www.perplexity.ai/','Perplexity',this)">Perplexity</button>
+      <button class="dest-pill" onclick="setDest('https://www.meta.ai/','Meta AI',this)">Meta AI</button>
+      <div class="dest-divider"></div>
+      <button class="dest-pill" onclick="setDest('https://www.canva.com/','Canva',this)">Canva</button>
+      <button class="dest-pill" onclick="setDest('https://new.express.adobe.com/','Adobe Express',this)">Adobe Express</button>
+      <button class="dest-pill" onclick="setDest('https://designer.microsoft.com/','MS Designer',this)">MS Designer</button>
+      <button class="dest-pill" onclick="setDest('https://docs.new/','Google Docs',this)">Google Docs</button>
+    </div>
+  </div>
+
+<div class="page active" id="page-dashboard">
         <div class="grid-3" style="margin-bottom:20px">
           <div class="stat-card">
             <div class="stat-label">Career Score</div>
@@ -514,10 +622,17 @@ body{
             <div class="card-title">⚡ Quick Actions</div>
             <div class="card-sub">Get started fast</div>
             <div style="display:flex;flex-direction:column;gap:8px">
-              <button class="btn btn-ghost btn-full" onclick="showPage('gap',document.querySelector('[onclick*=gap]'))">Run Career Gap Analysis</button>
-              <button class="btn btn-outline btn-full" onclick="showPage('interview',document.querySelector('[onclick*=interview]'))">Practice Interview</button>
-              <button class="btn btn-outline btn-full" onclick="showPage('resume',document.querySelector('[onclick*=resume]'))">Build My Resume</button>
-              <button class="btn btn-green btn-full" onclick="showPage('salary',document.querySelector('[onclick*=salary]'))">Check Salary Intel</button>
+              <button class="btn btn-ghost btn-full" onclick="showPage('gap',document.querySelector('[onclick*=gap]'))">⚡ Career Gap Analysis</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('roadmap',document.querySelector('[onclick*=roadmap]'))">🗓️ Skill Roadmap</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('resume',document.querySelector('[onclick*=resume]'))">📄 Resume Builder</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('ats',document.querySelector('[onclick*=ats]'))">🎯 ATS Keyword Scanner</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('coverletter',document.querySelector('[onclick*=coverletter]'))">✉️ Cover Letter Builder</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('interview',document.querySelector('[onclick*=interview]'))">🎤 Interview Coach</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('salary',document.querySelector('[onclick*=salary]'))">💰 Salary Intelligence</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('coach',document.querySelector('[onclick*=coach]'))">🤖 AI Career Coach</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('pathguide',document.querySelector('[onclick*=pathguide]'))">🗺️ Career Path Guide</button>
+              <button class="btn btn-outline btn-full" onclick="showPage('tracker',document.querySelector('[onclick*=tracker]'))">📋 Job Tracker</button>
+              <button class="btn btn-green btn-full" onclick="showPage('emails',document.querySelector('[onclick*=emails]'))">✍️ Email Templates</button>
             </div>
           </div>
         </div>
@@ -553,6 +668,7 @@ body{
           <div class="ai-bubble" id="gapResult">
             <div class="ai-header"><div class="ai-dot"></div>Apex AI Analysis</div>
             <div id="gapText"></div>
+            <button class="copy-btn" onclick="copyOutput('gapText',this)">📋 Copy Results</button>
           </div>
         </div>
       </div>
@@ -591,6 +707,7 @@ body{
           <div class="ai-bubble" id="rmResult">
             <div class="ai-header"><div class="ai-dot"></div>Your Personalized Roadmap</div>
             <div id="rmText"></div>
+            <button class="copy-btn" onclick="copyOutput('rmText',this)">📋 Copy Roadmap</button>
           </div>
         </div>
       </div>
@@ -631,6 +748,7 @@ body{
           <div class="ai-bubble" id="resResult">
             <div class="ai-header"><div class="ai-dot"></div>Your AI-Optimized Resume Content</div>
             <div id="resText"></div>
+            <button class="copy-btn" onclick="copyOutput('resText',this)">📋 Copy Resume Content</button>
           </div>
         </div>
       </div>
@@ -705,6 +823,7 @@ body{
           <div class="ai-bubble" id="salResult">
             <div class="ai-header"><div class="ai-dot"></div>Salary Intelligence Report</div>
             <div id="salText"></div>
+            <button class="copy-btn" onclick="copyOutput('salText',this)">📋 Copy Report</button>
           </div>
         </div>
       </div>
@@ -727,10 +846,252 @@ body{
         </div>
       </div>
 
+
+      <!-- ── ATS KEYWORD SCANNER ── -->
+      <div class="page" id="page-ats" style="display:none">
+        <div class="card">
+          <div class="card-title">🎯 ATS Keyword Scanner <span class="pro-badge">PRO</span></div>
+          <div class="card-sub">Paste a job description and your resume — find every keyword gap before you apply</div>
+          <div class="grid-2">
+            <div>
+              <div class="form-group">
+                <label class="form-label">Target Job Description</label>
+                <textarea class="form-textarea" id="atsJD" style="min-height:160px" placeholder="Paste the full job description here..."></textarea>
+              </div>
+            </div>
+            <div>
+              <div class="form-group">
+                <label class="form-label">Your Resume or Skills Summary</label>
+                <textarea class="form-textarea" id="atsResume" style="min-height:160px" placeholder="Paste your current resume text or list your skills, experience, and titles..."></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Career Stage</label>
+            <select class="form-select" id="atsStage">
+              <option>Entry Level — first job or under 2 years experience</option>
+              <option selected>Mid Career — 3–8 years experience</option>
+              <option>Senior / Leadership — 9+ years</option>
+              <option>Career Changer — new industry or role type</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="atsBtn" onclick="runATS()">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            Scan for ATS Keywords
+          </button>
+          <div class="ai-bubble" id="atsResult">
+            <div class="ai-header"><div class="ai-dot"></div>ATS Keyword Report</div>
+            <div id="atsText"></div>
+            <button class="copy-btn" onclick="copyOutput('atsText',this)">📋 Copy Keyword Report</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── COVER LETTER BUILDER ── -->
+      <div class="page" id="page-coverletter" style="display:none">
+        <div class="card">
+          <div class="card-title">✉️ AI Cover Letter Builder <span class="pro-badge">PRO</span></div>
+          <div class="card-sub">Tailored cover letters that get read — choose your style, get a polished draft in seconds</div>
+          <div class="grid-2">
+            <div>
+              <div class="form-group">
+                <label class="form-label">Job Title + Company (if known)</label>
+                <input class="form-input" id="clJob" placeholder="e.g. Operations Manager at FedEx">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Paste Job Description</label>
+                <textarea class="form-textarea" id="clJD" placeholder="Paste the job description — the more detail, the more tailored the letter..."></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Cover Letter Style</label>
+                <select class="form-select" id="clStyle">
+                  <option>Professional &amp; Traditional — formal tone, structured</option>
+                  <option>Modern &amp; Conversational — confident, direct, less stiff</option>
+                  <option>Career Changer — emphasizes transferable skills, addresses the switch</option>
+                  <option>Re-entering Workforce — addresses gap, leads with strengths</option>
+                  <option>Entry Level / First Job — enthusiasm + potential forward</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div class="form-group">
+                <label class="form-label">Your Relevant Background</label>
+                <textarea class="form-textarea" id="clBackground" placeholder="Summarize your experience, key skills, and anything specific you want highlighted..."></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Why This Role / Company?</label>
+                <textarea class="form-textarea" id="clWhy" placeholder="What draws you to this specific role? Even a sentence helps the AI personalize it..."></textarea>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="clBtn" onclick="buildCoverLetter()">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Write My Cover Letter
+          </button>
+          <div class="ai-bubble" id="clResult">
+            <div class="ai-header"><div class="ai-dot"></div>Your AI Cover Letter</div>
+            <div id="clText"></div>
+            <button class="copy-btn" onclick="copyOutput('clText',this)">📋 Copy Cover Letter</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CAREER PATH GUIDE ── -->
+      <div class="page" id="page-pathguide" style="display:none">
+        <div class="card">
+          <div class="card-title">🗺️ Career Path Guide <span class="pro-badge">PRO</span></div>
+          <div class="card-sub">From beginner to career changer — get a personalized step-by-step guide built for exactly where you are</div>
+
+          <div class="form-group">
+            <label class="form-label">Where Are You Right Now?</label>
+            <div class="path-grid">
+              <div class="path-card" id="path-0" onclick="selectPath(0)">
+                <div class="path-icon">🌱</div>
+                <h4>Starting Out</h4>
+                <p>First job, little to no experience, or recent grad</p>
+              </div>
+              <div class="path-card" id="path-1" onclick="selectPath(1)">
+                <div class="path-icon">🔄</div>
+                <h4>Switching Industries</h4>
+                <p>Changing to a different field using transferable skills</p>
+              </div>
+              <div class="path-card" id="path-2" onclick="selectPath(2)">
+                <div class="path-icon">⏸️</div>
+                <h4>Re-entering Workforce</h4>
+                <p>Returning after a gap — caregiving, health, or other reasons</p>
+              </div>
+              <div class="path-card" id="path-3" onclick="selectPath(3)">
+                <div class="path-icon">🚀</div>
+                <h4>Leveling Up</h4>
+                <p>Same field, aiming for higher title, more pay, or management</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Your Background (brief)</label>
+            <textarea class="form-textarea" id="pgBackground" placeholder="What have you done so far? Any jobs, side work, education, or volunteer experience counts..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Where You Want to Go</label>
+            <input class="form-input" id="pgTarget" placeholder="e.g. Become a project manager, break into tech, return to nursing...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Biggest Obstacle or Fear</label>
+            <input class="form-input" id="pgFear" placeholder="e.g. My age, my resume gap, no degree, don't know where to start...">
+          </div>
+          <button class="btn btn-primary" id="pgBtn" onclick="buildPathGuide()">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Build My Career Path Guide
+          </button>
+          <div class="ai-bubble" id="pgResult">
+            <div class="ai-header"><div class="ai-dot"></div>Your Personal Career Path Guide</div>
+            <div id="pgText"></div>
+            <button class="copy-btn" onclick="copyOutput('pgText',this)">📋 Copy My Guide</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── JOB TRACKER ── -->
+      <div class="page" id="page-tracker" style="display:none">
+        <div class="card">
+          <div class="card-title">📋 Job Application Tracker</div>
+          <div class="card-sub">Track every application, status, and follow-up in one place</div>
+          <div class="add-job-row">
+            <div class="form-group" style="margin:0">
+              <label class="form-label">Company</label>
+              <input class="form-input" id="tjCompany" placeholder="e.g. Amazon">
+            </div>
+            <div class="form-group" style="margin:0">
+              <label class="form-label">Role</label>
+              <input class="form-input" id="tjRole" placeholder="e.g. Operations Manager">
+            </div>
+            <div class="form-group" style="margin:0">
+              <label class="form-label">Status</label>
+              <select class="form-select" id="tjStatus">
+                <option value="applied">Applied</option>
+                <option value="followup">Follow-Up Needed</option>
+                <option value="interview">Interview Scheduled</option>
+                <option value="offer">Offer Received</option>
+                <option value="rejected">Rejected</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="addJob()" style="white-space:nowrap;margin-top:18px">+ Add</button>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="tracker-table">
+              <thead><tr><th>Company</th><th>Role</th><th>Date</th><th>Status</th><th>Notes</th><th></th></tr></thead>
+              <tbody id="trackerBody">
+                <tr id="tracker-empty"><td colspan="6" style="text-align:center;color:var(--muted);padding:32px;font-size:13px">No applications yet. Add your first above.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="divider"></div>
+          <div id="trackerStats" style="display:none" class="grid-3">
+            <div class="stat-card"><div class="stat-label">Total Applied</div><div class="stat-value accent" id="statTotal">0</div></div>
+            <div class="stat-card"><div class="stat-label">Interviews</div><div class="stat-value green" id="statInterviews">0</div></div>
+            <div class="stat-card"><div class="stat-label">Response Rate</div><div class="stat-value gold" id="statRate">0%</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EMAIL TEMPLATES ── -->
+      <div class="page" id="page-emails" style="display:none">
+        <div class="card">
+          <div class="card-title">✍️ AI Email Templates <span class="pro-badge">PRO</span></div>
+          <div class="card-sub">Professional emails for every moment in your job search — written in your voice</div>
+          <div class="form-group">
+            <label class="form-label">Email Type</label>
+            <select class="form-select" id="emailType" onchange="updateEmailHint()">
+              <option value="thankyou">Thank-You After Interview</option>
+              <option value="followup">Follow-Up After Applying</option>
+              <option value="negotiate">Salary Negotiation Counter</option>
+              <option value="decline">Declining an Offer Gracefully</option>
+              <option value="reference">Asking Someone to Be a Reference</option>
+              <option value="reconnect">Reconnecting With an Old Contact</option>
+              <option value="cold">Cold Outreach to a Hiring Manager</option>
+            </select>
+          </div>
+          <div class="ai-bubble visible" id="emailHint" style="border-left-color:var(--accent2);display:block">
+            <div style="font-size:12px;color:var(--muted)" id="emailHintText">💡 Best sent within 24 hours. Reference something specific from your interview conversation.</div>
+          </div>
+          <div class="grid-2" style="margin-top:16px">
+            <div class="form-group">
+              <label class="form-label">Recipient Name</label>
+              <input class="form-input" id="emailTo" placeholder="e.g. Sarah, Mr. Johnson">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Company / Role</label>
+              <input class="form-input" id="emailRole" placeholder="e.g. Operations Manager at FedEx">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Key Detail to Include</label>
+            <textarea class="form-textarea" id="emailDetail" placeholder="e.g. We discussed the fleet expansion. I want to highlight my dispatch background. The offer was $62K but I expected $70K..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tone</label>
+            <select class="form-select" id="emailTone">
+              <option>Professional and warm</option>
+              <option>Direct and confident</option>
+              <option>Enthusiastic and personable</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="emailBtn" onclick="buildEmail()">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+            Write My Email
+          </button>
+          <div class="ai-bubble" id="emailResult">
+            <div class="ai-header"><div class="ai-dot"></div>Your Email Draft</div>
+            <div id="emailText"></div>
+            <button class="copy-btn" onclick="copyOutput('emailText',this)">📋 Copy Email</button>
+          </div>
+        </div>
+      </div>
+
     </div><!-- /content -->
   </div><!-- /main -->
 </div><!-- /app -->
-
 <script>
 // ─── STATE ───
 const state = {
@@ -791,41 +1152,212 @@ function launchApp() {
 
 // ─── NAV ───
 function showPage(id, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.remove('active');
+    p.style.display = 'none';
+  });
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
+  const target = document.getElementById('page-' + id);
+  if (target) { target.classList.add('active'); target.style.display = 'block'; }
   if (el) el.classList.add('active');
 }
 
-// ─── CLAUDE API ───
-async function callClaude(systemPrompt, userMessage, streaming = false) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userMessage }]
-    })
+// ─── COPY OUTPUT ───
+function copyOutput(id, btn) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 Copy'; btn.classList.remove('copied'); }, 2000);
   });
-  const data = await res.json();
-  return data.content.map(b => b.text || '').join('');
 }
 
-async function callClaudeConv(systemPrompt, messages) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      system: systemPrompt,
-      messages
-    })
-  });
-  const data = await res.json();
-  return data.content.map(b => b.text || '').join('');
+// ─── PATH GUIDE SELECTION ───
+let selectedPath = null;
+function selectPath(idx) {
+  document.querySelectorAll('.path-card').forEach((c,i) => c.classList.toggle('selected', i === idx));
+  selectedPath = idx;
+}
+
+// ─── ATS KEYWORD SCANNER ───
+async function runATS() {
+  const jd = document.getElementById('atsJD').value.trim();
+  const resume = document.getElementById('atsResume').value.trim();
+  const stage = document.getElementById('atsStage').value;
+  if (!jd) { alert('Please paste a job description.'); return; }
+
+  document.getElementById('atsBtn').disabled = true;
+  document.getElementById('atsBtn').innerHTML = '<span class="loading-dots"><span></span><span></span><span></span></span> Scanning...';
+  document.getElementById('atsResult').classList.remove('visible');
+
+  const system = `You are an expert ATS (Applicant Tracking System) specialist and resume strategist. Analyze the match between a job description and a candidate's resume/skills. Be specific, direct, and actionable. Format your response exactly as:
+
+🎯 ATS MATCH SCORE: X/100
+[One sentence verdict on their chances]
+
+✅ KEYWORDS YOU HAVE (these are working for you):
+[List 6–10 keywords/phrases found in both the JD and their resume]
+
+❌ CRITICAL MISSING KEYWORDS (add these immediately):
+[List 6–10 high-priority keywords from the JD missing from their resume — include exact phrases ATS systems scan for]
+
+⚠️ PARTIAL MATCHES (rephrase these):
+[List 3–5 skills they have but worded differently than the JD — show the JD phrasing vs. their current phrasing]
+
+💡 HOW TO ADD THESE KEYWORDS NATURALLY:
+[Give 3 example bullet points that weave in the top missing keywords — written for their specific background]
+
+🏆 ATS QUICK WIN TIPS for ${stage}:
+[3 specific, actionable tips tailored to their career stage]`;
+
+  const msg = `Job Description:\n${jd}\n\nMy Resume / Skills:\n${resume || `${state.exp} years as ${state.title} in ${state.industry}, targeting ${state.target}`}\n\nCareer Stage: ${stage}`;
+
+  try {
+    const result = await callClaude(system, msg);
+    document.getElementById('atsText').textContent = result;
+    document.getElementById('atsResult').classList.add('visible');
+  } catch(e) {
+    document.getElementById('atsText').textContent = 'Error scanning. Please try again.';
+    document.getElementById('atsResult').classList.add('visible');
+  }
+  document.getElementById('atsBtn').disabled = false;
+  document.getElementById('atsBtn').innerHTML = '🎯 Scan for ATS Keywords';
+}
+
+// ─── COVER LETTER BUILDER ───
+async function buildCoverLetter() {
+  const job = document.getElementById('clJob').value.trim();
+  const jd = document.getElementById('clJD').value.trim();
+  const style = document.getElementById('clStyle').value;
+  const background = document.getElementById('clBackground').value.trim();
+  const why = document.getElementById('clWhy').value.trim();
+
+  if (!background && !jd) { alert('Please add your background or the job description.'); return; }
+
+  document.getElementById('clBtn').disabled = true;
+  document.getElementById('clBtn').innerHTML = '<span class="loading-dots"><span></span><span></span><span></span></span> Writing...';
+  document.getElementById('clResult').classList.remove('visible');
+
+  const styleGuides = {
+    'Professional': 'formal, structured, 3 paragraphs, traditional business tone',
+    'Modern': 'confident, direct, conversational — no clichés, no "I am writing to apply", lead with value',
+    'Career Changer': 'acknowledge the transition directly, lead with transferable skills, reframe the background as an asset not a liability',
+    'Re-entering': 'acknowledge the gap briefly and confidently, pivot immediately to what they bring, forward-looking tone',
+    'Entry Level': 'lead with enthusiasm and potential, highlight relevant coursework/projects/soft skills, show hunger to learn'
+  };
+  const styleKey = Object.keys(styleGuides).find(k => style.includes(k)) || 'Modern';
+
+  const system = `You are an elite cover letter writer. Write a compelling, tailored cover letter. Style: ${styleGuides[styleKey]}. 
+
+Rules:
+- Never start with "I am writing to apply for..."
+- Open with a hook — a specific insight, result, or statement that makes them keep reading
+- Connect the candidate's background directly to the role's needs
+- Keep it under 350 words — one page maximum
+- End with a clear, confident call to action
+- Write in first person, natural voice — not robotic or template-feeling
+
+Format: Write the full letter body only (no date/address headers). Start directly with "Dear Hiring Manager," or role-specific greeting.`;
+
+  const msg = `Role: ${job || state.target}
+Job Description: ${jd || 'Not provided'}
+My Background: ${background || `${state.exp} years as ${state.title} in ${state.industry}`}
+Why this role: ${why || 'Looking to grow and contribute to a strong team'}
+Style: ${style}`;
+
+  try {
+    const result = await callClaude(system, msg);
+    document.getElementById('clText').textContent = result;
+    document.getElementById('clResult').classList.add('visible');
+  } catch(e) {
+    document.getElementById('clText').textContent = 'Error writing letter. Please try again.';
+    document.getElementById('clResult').classList.add('visible');
+  }
+  document.getElementById('clBtn').disabled = false;
+  document.getElementById('clBtn').innerHTML = '✉️ Write My Cover Letter';
+}
+
+// ─── CAREER PATH GUIDE ───
+async function buildPathGuide() {
+  const background = document.getElementById('pgBackground').value.trim();
+  const target = document.getElementById('pgTarget').value.trim() || state.target;
+  const fear = document.getElementById('pgFear').value.trim();
+
+  const pathTypes = ['Starting Out / First Career', 'Switching Industries', 'Re-entering the Workforce', 'Leveling Up in Current Field'];
+  const pathType = selectedPath !== null ? pathTypes[selectedPath] : 'Career Transition';
+
+  if (!target) { alert('Please tell us where you want to go.'); return; }
+
+  document.getElementById('pgBtn').disabled = true;
+  document.getElementById('pgBtn').innerHTML = '<span class="loading-dots"><span></span><span></span><span></span></span> Building your guide...';
+  document.getElementById('pgResult').classList.remove('visible');
+
+  const system = `You are Apex, a world-class career coach. Build a detailed, personalized career path guide. Be warm, direct, and practical. Address their specific situation — not generic advice. 
+
+Format as:
+
+🎯 YOUR SITUATION: [1–2 sentence honest assessment of where they are and what they're working with]
+
+📍 YOUR STARTING POINT
+[What they have going for them — be specific and find the positives even in difficult situations]
+
+🚧 THE REAL OBSTACLES (and how to handle each one)
+[Address the fear/obstacle they named directly. Be honest but empowering — tell them what actually works]
+
+🗺️ YOUR STEP-BY-STEP PATH
+Step 1 — [Title]: [What to do, why, how long it takes]
+Step 2 — ...
+[Continue for 5–7 steps, specific to their situation]
+
+⚡ WHAT TO DO THIS WEEK
+[3 concrete actions they can take in the next 7 days — free, specific, no excuses]
+
+💪 THE TRUTH ABOUT [their path type]
+[A paragraph of honest, encouraging truth about people who've done exactly this — what separates those who make it from those who don't]
+
+🏆 WHAT SUCCESS LOOKS LIKE IN 6 MONTHS
+[Paint a specific, realistic picture of where they could be]`;
+
+  const msg = `Career Path Type: ${pathType}
+Background: ${background || `${state.exp} years as ${state.title} in ${state.industry}`}
+Target: ${target}
+Biggest fear/obstacle: ${fear || 'Not specified'}
+User context: ${state.name}, ${state.industry}, challenge: ${state.challenge}`;
+
+  try {
+    const result = await callClaude(system, msg, false);
+    document.getElementById('pgText').textContent = result;
+    document.getElementById('pgResult').classList.add('visible');
+  } catch(e) {
+    document.getElementById('pgText').textContent = 'Error building guide. Please try again.';
+    document.getElementById('pgResult').classList.add('visible');
+  }
+  document.getElementById('pgBtn').disabled = false;
+  document.getElementById('pgBtn').innerHTML = '🗺️ Build My Career Path Guide';
+}
+
+// ─── CLAUDE API ───
+
+// ── DESTINATION SELECTOR ──
+let selectedDest={url:'https://chatgpt.com/',name:'ChatGPT'};
+function setDest(url,name,el){
+  selectedDest={url,name};
+  document.querySelectorAll('.dest-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+}
+
+async function callClaude(systemPrompt,userMessage){
+  const full=`${systemPrompt}\n\n${'─'.repeat(40)}\n\nINPUT:\n${userMessage}`;
+  try{await navigator.clipboard.writeText(full);}catch(e){}
+  window.open(selectedDest.url,'_blank');
+  return `✅ Prompt copied — ${selectedDest.name} is opening.\n\nPaste and send to get your results.\n\n────────────────────\nPREVIEW:\n${full.substring(0,400)}...`;
+}
+async function callClaudeConv(systemPrompt,messages){
+  const convo=messages.map(m=>`${m.role.toUpperCase()}: ${m.content}`).join('\n\n');
+  const full=`${systemPrompt}\n\n${'─'.repeat(40)}\n\n${convo}`;
+  try{await navigator.clipboard.writeText(full);}catch(e){}
+  window.open(selectedDest.url,'_blank');
+  return `✅ Session prompt copied — ${selectedDest.name} is opening.\n\nPaste and send to continue.\n\n────────────────────\nPREVIEW:\n${full.substring(0,400)}...`;
 }
 
 function setLoading(btnId, loading, loadText = 'Analyzing...') {
@@ -1121,6 +1653,127 @@ async function sendCoachMessage() {
   thinking.textContent = reply;
   document.getElementById('coachMessages').scrollTop = 9999;
 }
+
+// ─── JOB TRACKER ───
+let jobs = [];
+function addJob() {
+  const company = document.getElementById('tjCompany').value.trim();
+  const role = document.getElementById('tjRole').value.trim();
+  const status = document.getElementById('tjStatus').value;
+  if (!company || !role) { alert('Please enter company and role.'); return; }
+  const job = { id: Date.now(), company, role, status, date: new Date().toLocaleDateString('en-US',{month:'short',day:'numeric'}), notes: '' };
+  jobs.push(job);
+  document.getElementById('tjCompany').value = '';
+  document.getElementById('tjRole').value = '';
+  renderTracker();
+}
+function removeJob(id) {
+  jobs = jobs.filter(j => j.id !== id);
+  renderTracker();
+}
+function updateJobStatus(id, status) {
+  const job = jobs.find(j => j.id === id);
+  if (job) { job.status = status; renderTracker(); }
+}
+function renderTracker() {
+  const tbody = document.getElementById('trackerBody');
+  const empty = document.getElementById('tracker-empty');
+  const statsEl = document.getElementById('trackerStats');
+  if (!jobs.length) { tbody.innerHTML = ''; tbody.appendChild(empty); empty.style.display=''; statsEl.style.display='none'; return; }
+  empty.style.display = 'none';
+  tbody.innerHTML = jobs.map(j => `
+    <tr>
+      <td style="font-weight:600;color:var(--text)">${j.company}</td>
+      <td style="color:var(--muted)">${j.role}</td>
+      <td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)">${j.date}</td>
+      <td>
+        <select class="form-select" style="padding:4px 8px;font-size:11px;width:auto" onchange="updateJobStatus(${j.id},this.value)">
+          ${['applied','followup','interview','offer','rejected'].map(s=>`<option value="${s}" ${j.status===s?'selected':''}>${s.charAt(0).toUpperCase()+s.slice(1)}</option>`).join('')}
+        </select>
+      </td>
+      <td><input class="form-input" style="padding:4px 8px;font-size:12px" placeholder="Notes..." value="${j.notes}" oninput="jobs.find(x=>x.id===${j.id}).notes=this.value"></td>
+      <td><button onclick="removeJob(${j.id})" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px">×</button></td>
+    </tr>
+  `).join('');
+  // stats
+  const total = jobs.length;
+  const interviews = jobs.filter(j=>j.status==='interview'||j.status==='offer').length;
+  const responses = jobs.filter(j=>j.status!=='applied').length;
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statInterviews').textContent = interviews;
+  document.getElementById('statRate').textContent = total ? Math.round(responses/total*100)+'%' : '0%';
+  statsEl.style.display = 'grid';
+}
+
+// ─── EMAIL HINTS ───
+const emailHints = {
+  thankyou: '💡 Best sent within 24 hours. Reference something specific from your interview conversation.',
+  followup: "💡 Send 5–7 business days after applying if you haven't heard back. Keep it brief.",
+  negotiate: '💡 Always counter in writing. Never accept or decline verbally on the spot.',
+  decline: '💡 Decline gracefully — industries are small. Leave the door open.',
+  reference: '💡 Always ask before listing someone. Give them context on the role.',
+  reconnect: '💡 Lead with value or a genuine compliment — not immediately asking for something.',
+  cold: '💡 Keep cold outreach under 100 words. One clear ask. Research them first.'
+};
+function updateEmailHint() {
+  const type = document.getElementById('emailType').value;
+  document.getElementById('emailHintText').textContent = emailHints[type] || '';
+}
+
+// ─── EMAIL BUILDER ───
+async function buildEmail() {
+  const type = document.getElementById('emailType').value;
+  const to = document.getElementById('emailTo').value.trim() || 'Hiring Manager';
+  const role = document.getElementById('emailRole').value.trim() || state.target;
+  const detail = document.getElementById('emailDetail').value.trim();
+  const tone = document.getElementById('emailTone').value;
+
+  document.getElementById('emailBtn').disabled = true;
+  document.getElementById('emailBtn').innerHTML = '<span class="loading-dots"><span></span><span></span><span></span></span> Writing...';
+  document.getElementById('emailResult').classList.remove('visible');
+
+  const typeMap = {
+    thankyou: 'post-interview thank-you email',
+    followup: 'follow-up email after submitting a job application',
+    negotiate: 'salary negotiation counter-offer email',
+    decline: 'polite email declining a job offer',
+    reference: 'email asking someone to serve as a professional reference',
+    reconnect: 'email reconnecting with a professional contact after time apart',
+    cold: 'cold outreach email to a hiring manager or recruiter'
+  };
+
+  const system = `You are an expert career communications writer. Write a professional ${typeMap[type]}. 
+
+Rules:
+- Tone: ${tone}
+- Keep it concise — under 180 words for most types, under 250 for negotiation
+- Never use clichés like "I hope this email finds you well" or "Please don't hesitate"
+- Be specific, warm, and human — not template-sounding
+- Include a subject line at the top formatted as: Subject: [subject]
+- Then write the full email body
+- End with a clear next step or call to action`;
+
+  const msg = `Recipient: ${to}
+Role/Company: ${role}
+Type: ${typeMap[type]}
+Key details: ${detail || `Background in ${state.industry}, targeting ${state.target}`}
+Sender context: ${state.name}, ${state.title}, ${state.exp} experience`;
+
+  try {
+    const result = await callClaude(system, msg);
+    document.getElementById('emailText').textContent = result;
+    document.getElementById('emailResult').classList.add('visible');
+  } catch(e) {
+    document.getElementById('emailText').textContent = 'Error writing email. Please try again.';
+    document.getElementById('emailResult').classList.add('visible');
+  }
+  document.getElementById('emailBtn').disabled = false;
+  document.getElementById('emailBtn').innerHTML = '✍️ Write My Email';
+}
 </script>
+
+<div style="margin-left:220px;padding:12px 28px;border-top:1px solid rgba(212,168,67,0.08);font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(240,236,228,0.2);letter-spacing:0.05em;line-height:1.7">
+  Disclaimer: Apex Career Pro is an AI-powered tool designed to assist with creativity and productivity. Individual results may vary based on user input, implementation, and other factors. · © 2026 BleuDreams™ · All sales final
+</div>
 </body>
 </html>
